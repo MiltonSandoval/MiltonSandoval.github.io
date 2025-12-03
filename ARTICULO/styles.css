@@ -1,0 +1,591 @@
+/* =====================================
+   RESET Y VARIABLES - PALETA DEL INDEX RAIZ
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* MISMA PALETA EXACTA que el index raíz */
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
+    --color-secondary: #0ea5e9;
+    --color-accent: #3b82f6;
+    --color-text: #1e293b;
+    --color-text-light: #64748b;
+    --color-bg: #f8fafc;
+    --color-card: #ffffff;
+    --color-border: #e2e8f0;
+    --color-footer: #0f172a;
+    
+    /* MISMAS SOMBRAS que el index raíz */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+    
+    /* MISMOS BORDER RADIUS que el index raíz */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    
+    /* Variables específicas para artículo */
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --font-serif: 'Georgia', serif;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+}
+
+body {
+    /* MISMA FUENTE y fondo que el index raíz */
+    font-family: var(--font-sans);
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* =====================================
+   HEADER DEL SITIO (COHERENTE CON INDEX)
+   ===================================== */
+
+.site-header {
+    background-color: var(--color-card);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.site-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+    margin: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg);
+}
+
+/* =====================================
+   LAYOUT DE PÁGINA
+   ===================================== */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+}
+
+.main-content {
+    min-width: 0;
+}
+
+/* =====================================
+   ARTÍCULO (ESTILOS COHERENTES CON INDEX)
+   ===================================== */
+
+.article {
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+}
+
+/* Header del artículo */
+.article-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.article-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+.article-meta .author {
+    display: flex;
+    align-items: center;
+}
+
+.article-meta strong {
+    color: var(--color-primary);
+}
+
+.article-meta .date {
+    color: var(--color-text-light);
+}
+
+.article-meta .reading-time {
+    color: var(--color-text-light);
+}
+
+/* Imagen destacada */
+.featured-image {
+    margin: 0 0 var(--spacing-xl) 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.featured-image figcaption {
+    padding: var(--spacing-sm);
+    background-color: var(--color-bg);
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Contenido del artículo */
+.article-content {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.article-content .lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    padding: var(--spacing-md);
+    background-color: var(--color-bg);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+}
+
+.article-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.article-content h2 {
+    font-family: var(--font-sans);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.article-content h3 {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Listas */
+.article-content ul,
+.article-content ol {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-xl);
+}
+
+.article-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Lista numerada especial - estilo coherente con index */
+.article-content .trend-list {
+    counter-reset: trend-counter;
+    list-style: none;
+    padding-left: 0;
+    margin: var(--spacing-lg) 0;
+}
+
+.article-content .trend-list li {
+    counter-increment: trend-counter;
+    position: relative;
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 3.5rem;
+    margin-bottom: var(--spacing-md);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease;
+}
+
+.article-content .trend-list li:hover {
+    transform: translateX(5px);
+    border-color: var(--color-primary);
+}
+
+.article-content .trend-list li::before {
+    content: counter(trend-counter);
+    position: absolute;
+    left: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+}
+
+/* Citas - estilo coherente */
+.article-content blockquote.quote {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background-color: var(--color-bg);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+.article-content blockquote.quote p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+    font-style: italic;
+}
+
+.article-content blockquote.quote footer {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Links en el contenido */
+.article-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.article-content a:hover {
+    color: var(--color-primary-dark);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Footer del artículo */
+.article-footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.tag:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* =====================================
+   SIDEBAR (ESTILOS COHERENTES CON INDEX)
+   ===================================== */
+
+.sidebar {
+    /* El grid ya define el ancho */
+}
+
+.widget {
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+}
+
+.widget-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Artículos relacionados */
+.related-posts {
+    list-style: none;
+    padding: 0;
+}
+
+.related-posts li {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    transition: transform 0.2s ease;
+}
+
+.related-posts li:hover {
+    transform: translateX(5px);
+}
+
+.related-posts li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.related-posts a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.related-posts h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.related-posts time {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+/* Bio del autor */
+.author-bio {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+}
+
+.author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-sm);
+    border: 3px solid var(--color-primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.author-bio h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.author-bio p {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.social-links a {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    border: 1px solid var(--color-border);
+}
+
+.social-links a:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+/* =====================================
+   FOOTER DEL SITIO (COHERENTE CON INDEX)
+   ===================================== */
+
+.site-footer {
+    background-color: var(--color-footer);
+    color: rgba(255, 255, 255, 0.9);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+}
+
+.site-footer p {
+    text-align: center;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* =====================================
+   RESPONSIVE (CONSISTENTE CON INDEX)
+   ===================================== */
+
+@media (max-width: 968px) {
+    .page-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .sidebar {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .site-header .container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .article-title {
+        font-size: 2rem;
+    }
+    
+    .article {
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-md);
+    }
+    
+    .article-content {
+        font-size: 1rem;
+    }
+    
+    .article-content .lead {
+        font-size: 1.125rem;
+        padding: var(--spacing-sm);
+    }
+    
+    .widget {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .article-meta {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .article-title {
+        font-size: 1.75rem;
+    }
+    
+    .article {
+        padding: var(--spacing-md);
+        border-radius: var(--radius-sm);
+    }
+    
+    .page-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .widget {
+        padding: var(--spacing-sm);
+    }
+}

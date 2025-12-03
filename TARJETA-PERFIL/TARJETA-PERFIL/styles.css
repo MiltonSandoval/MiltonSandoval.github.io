@@ -1,0 +1,309 @@
+/* =====================================
+   RESET Y ESTILOS GLOBALES - CON PALETA DEL INDEX RAIZ
+   ===================================== */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fuente igual que el index raíz */
+    font-family: 'Inter', -apple-system, sans-serif;
+    
+    /* Fondo IDÉNTICO al index raíz */
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    
+    /* Centrado vertical y horizontal */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Padding para móviles */
+    padding: 20px;
+}
+
+/* =====================================
+   TARJETA DE PERFIL (ESTILO COHERENTE CON INDEX RAIZ)
+   ===================================== */
+
+.tarjeta-perfil {
+    /* Dimensiones */
+    width: 100%;
+    max-width: 400px; /* Similar a las cards del index raíz */
+    
+    /* Espaciado interno - más amplio como las cards */
+    padding: 40px 35px;
+    
+    /* Fondo IDÉNTICO a las cards del index raíz */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px; /* radius-lg del index raíz */
+    
+    /* Sombra IDÉNTICA a las cards del index raíz */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Alineación de texto */
+    text-align: center;
+    
+    /* Transición igual que en index raíz */
+    transition: all 0.3s ease;
+    
+    /* Efecto de borde superior como en las cards hover */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea superior con gradiente IDÉNTICA al index raíz */
+.tarjeta-perfil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+}
+
+/* Efecto hover IDÉNTICO al index raíz */
+.tarjeta-perfil:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-color: #2563eb;
+}
+
+/* =====================================
+   IMAGEN DE PERFIL (ACTUALIZADA CON ESTILOS DEL INDEX)
+   ===================================== */
+
+.perfil-imagen {
+    /* Tamaño - ligeramente más grande */
+    width: 150px;
+    height: 150px;
+    
+    /* Hacer circular */
+    border-radius: 50%;
+    
+    /* Borde con gradiente del index raíz */
+    border: 5px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #2563eb, #0ea5e9) border-box;
+    
+    /* Espaciado inferior */
+    margin-bottom: 25px;
+    
+    /* Asegurar que la imagen no se deforme */
+    object-fit: cover;
+    
+    /* Transición igual que en index raíz */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Sombra IDÉNTICA a la del avatar del index raíz */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.perfil-imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* =====================================
+   INFORMACIÓN DEL PERFIL (COLORES DEL INDEX RAIZ)
+   ===================================== */
+
+.perfil-nombre {
+    /* Tamaño y peso - similar a los títulos del index */
+    font-size: 28px;
+    font-weight: 700;
+    
+    /* Color IDÉNTICO al --color-text del index raíz */
+    color: #1e293b;
+    
+    /* Espaciado */
+    margin-bottom: 10px;
+}
+
+.perfil-titulo {
+    /* Tamaño */
+    font-size: 18px;
+    
+    /* Color IDÉNTICO al --color-primary del index raíz */
+    color: #2563eb;
+    
+    /* Peso - igual que los subtítulos del index */
+    font-weight: 600;
+    
+    /* Espaciado */
+    margin-bottom: 6px;
+}
+
+/* Segundo título (Diseño Web II) */
+.perfil-titulo:nth-of-type(2) {
+    /* Color IDÉNTICO al --color-secondary del index raíz */
+    color: #0ea5e9;
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.perfil-descripcion {
+    /* Tamaño */
+    font-size: 15px;
+    
+    /* Color IDÉNTICO al --color-text-light del index raíz */
+    color: #64748b;
+    
+    /* Altura de línea para legibilidad */
+    line-height: 1.7;
+    
+    /* Espaciado */
+    margin-bottom: 30px;
+}
+
+/* =====================================
+   BOTÓN (ESTILOS IDÉNTICOS AL INDEX RAIZ)
+   ===================================== */
+
+.btn-contactar {
+    /* Tamaño - igual que los botones del index */
+    padding: 14px 35px;
+    font-size: 16px;
+    
+    /* Colores IDÉNTICOS al index raíz */
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: #ffffff;
+    
+    /* Borde - mismo border-radius que el index */
+    border: none;
+    border-radius: 10px;
+    
+    /* Texto - misma fuente y peso */
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    
+    /* Cursor */
+    cursor: pointer;
+    
+    /* Transición igual */
+    transition: all 0.3s ease;
+    
+    /* Sombra IDÉNTICA a los botones del index */
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+    
+    /* Para efecto hover suave */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efecto hover IDÉNTICO al index raíz */
+.btn-contactar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-contactar:hover::before {
+    opacity: 1;
+}
+
+.btn-contactar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Efecto active igual */
+.btn-contactar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+}
+
+/* Efecto focus para accesibilidad */
+.btn-contactar:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.3);
+    outline-offset: 2px;
+}
+
+/* =====================================
+   RESPONSIVE (CONSISTENTE CON INDEX RAIZ)
+   ===================================== */
+
+@media (max-width: 768px) {
+    .tarjeta-perfil {
+        padding: 35px 25px;
+        max-width: 350px;
+        border-radius: 14px; /* radius-lg del index */
+    }
+    
+    .perfil-imagen {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .perfil-nombre {
+        font-size: 24px;
+    }
+    
+    .perfil-titulo {
+        font-size: 16px;
+    }
+    
+    .perfil-titulo:nth-of-type(2) {
+        font-size: 15px;
+    }
+    
+    .btn-contactar {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .tarjeta-perfil {
+        padding: 30px 20px;
+        max-width: 320px;
+    }
+
+    .perfil-imagen {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+    }
+
+    .perfil-nombre {
+        font-size: 22px;
+    }
+
+    .perfil-titulo {
+        font-size: 15px;
+    }
+    
+    .perfil-titulo:nth-of-type(2) {
+        font-size: 14px;
+    }
+    
+    .perfil-descripcion {
+        font-size: 14px;
+    }
+    
+    .btn-contactar {
+        padding: 11px 28px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+}

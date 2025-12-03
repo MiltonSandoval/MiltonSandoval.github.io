@@ -1,0 +1,458 @@
+/* =====================================
+   RESET Y VARIABLES - PALETA DEL INDEX RAIZ
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* MISMA PALETA EXACTA que el index raíz */
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
+    --color-secondary: #0ea5e9;
+    --color-accent: #3b82f6;
+    --color-text: #1e293b;
+    --color-text-light: #64748b;
+    --color-bg: #f8fafc;
+    --color-card: #ffffff;
+    --color-border: #e2e8f0;
+    --color-footer: #0f172a;
+    
+    /* MISMAS SOMBRAS que el index raíz */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+    
+    /* MISMOS BORDER RADIUS que el index raíz */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    
+    /* Variables específicas para navegación */
+    --nav-height: 70px;
+    --nav-bg: var(--color-footer); /* Footer color del index */
+    --nav-text: #ffffff;
+    
+    /* Transiciones */
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* MISMA FUENTE y fondo que el index raíz */
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =====================================
+   NAVEGACIÓN (ESTILOS COHERENTES CON INDEX)
+   ===================================== */
+
+.navbar {
+    background-color: var(--nav-bg); /* Color del footer del index */
+    height: var(--nav-height);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg); /* Misma sombra que index */
+}
+
+.navbar .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo - estilo similar al index raíz */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+/* Botón hamburguesa (móvil) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: var(--nav-text);
+    border-radius: 10px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: var(--nav-text);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Animación del hamburguesa */
+.nav-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Menú de navegación */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 8px 16px;
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--radius-md); /* Mismo radius que index */
+    transition: var(--transition);
+    position: relative;
+    font-size: 15px;
+}
+
+/* Efecto hover con colores del index */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+}
+
+/* Efecto de subrayado animado - estilo similar al index */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Estado activo - colores del index */
+.nav-link.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.nav-link.active::after {
+    width: 0;
+}
+
+/* Efecto focus para accesibilidad */
+.nav-link:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Botón CTA - IDÉNTICO al index raíz */
+.btn-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px; /* Mismo que botones index */
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+}
+
+.btn-cta::after {
+    display: none;
+}
+
+/* =====================================
+   CONTENIDO DE DEMOSTRACIÓN (ESTILOS INDEX RAIZ)
+   ===================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: 80px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.content-section {
+    padding: 80px 0;
+    background-color: var(--color-bg);
+}
+
+.content-section:nth-child(even) {
+    background-color: white;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Tarjetas dentro del contenido - igual que index */
+.content-section .feature-card {
+    background: var(--color-card);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+.content-section .feature-card h3 {
+    color: var(--color-primary);
+}
+
+.content-section .feature-card p {
+    color: var(--color-text-light);
+}
+
+.footer {
+    background-color: var(--color-footer);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* =====================================
+   RESPONSIVE (CONSISTENTE CON INDEX RAIZ)
+   ===================================== */
+
+@media (max-width: 768px) {
+    /* Mostrar botón hamburguesa */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Menú móvil */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: var(--nav-height);
+        flex-direction: column;
+        background-color: var(--nav-bg);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow-xl);
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    /* Menú abierto */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 15px;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Botón CTA en móvil */
+    .btn-cta {
+        margin: 20px;
+        display: block;
+        width: calc(100% - 40px);
+    }
+
+    /* Hero responsive */
+    .hero {
+        padding: 60px 0;
+        min-height: 400px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    
+    .content-section {
+        padding: 60px 20px;
+    }
+    
+    .content-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 0;
+        min-height: 350px;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM_ALERT.EXE</title>
+    <!-- Pixel Art Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SYSTEM_ALERT</h1>
+        <p>// Presiona el botón para ejecutar la alerta.</p>
+        <button class="btn-open" id="btnOpen">LAUNCH_ALERT.EXE</button>
+        
+        <div class="info">
+            <h3>[SPECIFICATIONS]:</h3>
+            <ul>
+                <li>Centrado con > position: fixed</li>
+                <li>Overlay de sistema</li>
+                <li>Cierre con [X]</li>
+                <li>Cierre en _OUTSIDE_CLICK</li>
+                <li>Transiciones > 1-bit</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="btn-close" id="btnClose" aria-label="Cerrar modal">X</button>
+            <div class="modal-header">
+                <div class="modal-icon">[!]</div>
+                <h2 id="modalTitle">SYSTEM_ALERT_#001</h2>
+            </div>
+            <div class="modal-body">
+                <p>Este es un cuadro de diálogo del sistema renderizado con <code>position: fixed</code>.</p>
+                <p>El viewport está bloqueado. La unidad está centrada horizontal y verticalmente sobre el proceso principal.</p>
+                <div class="modal-features">
+                    <div class="feature">
+                        <span>> Centrado perfecto</span>
+                    </div>
+                    <div class="feature">
+                        <span>> Overlay responsive</span>
+                    </div>
+                    <div class="feature">
+                        <span>> Animaciones de 8-bit</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-action" id="btnModalAction">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMPORTANTE: Script AL FINAL del body -->
+    <script src="script.js"></script>
+</body>
+</html>

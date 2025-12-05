@@ -3,116 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Proyectos - Milton Sandoval</title>
+    <title>Dashboard de Proyectos - Milton Sandoval</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="contenedor-principal">
-        <!-- Header con presentación -->
-        <header class="header-principal">
-            <div class="avatar-container">
-                <img src="./ARTICULO/img/mil.jpg" alt="Milton Sandoval" class="avatar">
-                <h1>Milton Sandoval Monasterio</h1>
-                <p class="subtitulo">Desarrollador Frontend • Diseño Web II</p>
-                <p class="descripcion">Colección de proyectos y ejercicios prácticos</p>
+    <div class="dashboard-container">
+        <!-- Sidebar de Navegación -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="avatar-frame">
+                    <img src="./ARTICULO/img/mil.jpg" alt="Milton Sandoval" class="avatar">
+                </div>
+                <h2>Milton</h2>
+                <p class="subtitulo">> Desarrollador_</p>
             </div>
-        </header>
+            <nav class="module-nav">
+                <ul>
+                    <li><a href="#modulo-1" class="active">Módulo 1</a></li>
+                    <li><a href="#modulo-2">Módulo 2</a></li>
+                    <li><a href="#modulo-3">Módulo 3</a></li>
+                    <li><a href="#modulo-4">Módulo 4</a></li>
+                    <li><a href="#modulo-5">Módulo 5</a></li>
+                    <!-- Agrega aquí los futuros módulos -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>DISEÑO WEB II</p>
+                <div class="redes-sociales">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-codepen"></i></a>
+                </div>
+            </div>
+        </aside>
 
-        <!-- Grid de proyectos -->
-        <main class="grid-proyectos">
-            <h2 class="titulo-seccion">📂 Mis Proyectos</h2>
-            <p class="descripcion-seccion">Cada proyecto representa un concepto diferente del diseño web moderno</p>
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard de Proyectos</h1>
+                <p>// Colección de proyectos y ejercicios prácticos</p>
+            </header>
+
+            <!-- Módulo 1 -->
+            <section id="modulo-1" class="module-section">
+                <h2>C:\MODULOS\MODULO_1\</h2>
+                <div class="cards-container">
+                    <a href="./TARJETA-PERFIL/TARJETA-PERFIL/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Tarjeta-Perfil.exe</h3>
+                            <p>Diseño responsivo con gradientes y efectos hover.</p>
+                            <div class="card-tags">
+                                <span class="tag">Responsive</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Gradients</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./NAVEGACION/NAVEGACION/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Menu-Navegacion.exe</h3>
+                            <p>Navbar responsive con menú hamburguesa.</p>
+                            <div class="card-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Responsive</span>
+                                <span class="tag">Sticky</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./ARTICULO/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Blog-Articulo.exe</h3>
+                            <p>Layout de blog con sidebar y tipografía moderna.</p>
+                            <div class="card-tags">
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Tipografía</span>
+                                <span class="tag">Semántica</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Módulo 2 -->
+            <section id="modulo-2" class="module-section">
+                <h2>C:\MODULOS\MODULO_2\</h2>
+                <div class="cards-container">
+                    <a href="./PADDINGS/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Padding-BoxModel.exe</h3>
+                            <p>Ejercicios interactivos sobre espaciado interno.</p>
+                             <div class="card-tags">
+                                <span class="tag">Box Model</span>
+                                <span class="tag">Práctico</span>
+                                <span class="tag">Demo</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./BORDERS/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Bordes-Radius.exe</h3>
+                            <p>Exploración completa de estilos de bordes en CSS.</p>
+                            <div class="card-tags">
+                                <span class="tag">CSS Borders</span>
+                                <span class="tag">Border-radius</span>
+                                <span class="tag">Shapes</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Box-Sizing/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Box-Sizing.exe</h3>
+                            <p>Comparación interactiva de content-box vs border-box.</p>
+                            <div class="card-tags">
+                                <span class="tag">Box Model</span>
+                                <span class="tag">Interactivo</span>
+                                <span class="tag">Demo</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Card/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Card-Component.exe</h3>
+                            <p>Componente de tarjeta de producto con Box Model.</p>
+                             <div class="card-tags">
+                                <span class="tag">Componentes</span>
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Módulo 3 -->
+            <section id="modulo-3" class="module-section">
+                <h2>C:\MODULOS\MODULO_3\</h2>
+                <div class="cards-container">
+                     <a href="./Modal/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Modal-Centrado.exe</h3>
+                            <p>Modal interactivo con overlay y transiciones.</p>
+                            <div class="card-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Overlay</span>
+                                <span class="tag">Animaciones</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Stiky/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Sticky-Navbar.exe</h3>
+                            <p>Navegación que se pega al hacer scroll.</p>
+                            <div class="card-tags">
+                                <span class="tag">Position</span>
+                                <span class="tag">Sticky</span>
+                                <span class="tag">Scroll</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Hero-Overlay/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Hero-Overlay.exe</h3>
+                            <p>Sección "Hero" con superposición de imagen y texto.</p>
+                            <div class="card-tags">
+                                <span class="tag">Layout</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Overlay</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./CARDBADGE/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Card-Badge.exe</h3>
+                            <p>Demostración de insignias posicionadas sobre tarjetas.</p>
+                            <div class="card-tags">
+                                <span class="tag">Position</span>
+                                <span class="tag">Absolute</span>
+                                <span class="tag">Componente</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Módulo 4 -->
+            <section id="modulo-4" class="module-section">
+                <h2>C:\MODULOS\MODULO_4\</h2>
+                <div class="cards-container">
+                    <a href="./CARDS-RESPONSIVE/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Cards-Responsive.exe</h3>
+                            <p>Galería de tarjetas con diseño adaptable (responsive).</p>
+                            <div class="card-tags">
+                                <span class="tag">Responsive</span>
+                                <span class="tag">Grid</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./DASHBOARD/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Admin-Dashboard.exe</h3>
+                            <p>Layout de dashboard con sidebar y grid system.</p>
+                            <div class="card-tags">
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Layout</span>
+                                <span class="tag">Admin</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./FLEXBOX/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Flexbox-Nav.exe</h3>
+                            <p>Navbar responsive creada con Flexbox.</p>
+                            <div class="card-tags">
+                                <span class="tag">Flexbox</span>
+                                <span class="tag">Responsive</span>
+                                <span class="tag">Layout</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./GALLERY-GRID/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Gallery-Grid.exe</h3>
+                            <p>Galería responsive con CSS Grid (sin media queries).</p>
+                            <div class="card-tags">
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Auto-fit</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./HOLY-GRAIL/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Holy-Grail.exe</h3>
+                            <p>Layout clásico "Holy Grail" con CSS Grid y áreas.</p>
+                            <div class="card-tags">
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Layout</span>
+                                <span class="tag">Grid Areas</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Proyectos del Módulo 4 se agregarán aquí -->
+                </div>
+            </section>
+
+            <!-- Módulo 5 -->
+            <section id="modulo-5" class="module-section">
+                <h2>C:\MODULOS\MODULO_5\</h2>
+                <div class="cards-container">
+                    <a href="./LANDING-RESPONSIVE/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Landing-Responsive.exe</h3>
+                            <p>Landing page con diseño adaptable (mobile-first).</p>
+                            <div class="card-tags">
+                                <span class="tag">Mobile-First</span>
+                                <span class="tag">Responsive</span>
+                                <span class="tag">Layout</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./GRID-RESPONSIVE/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Grid-Responsive.exe</h3>
+                            <p>Galería responsive con CSS Grid y auto-fit.</p>
+                            <div class="card-tags">
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Auto-fit</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./NAVBAR-SLIDE/index.html" class="card-proyecto">
+                        <div class="card-body">
+                            <h3>Navbar-Slide.exe</h3>
+                            <p>Navbar responsive con menú lateral deslizable.</p>
+                            <div class="card-tags">
+                                <span class="tag">Flexbox</span>
+                                <span class="tag">Responsive</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Proyectos del Módulo 5 se agregarán aquí -->
+                </div>
+            </section>
             
-            <div class="cards-container">
-                <!-- Tarjeta de Perfil -->
-                <a href="./TARJETA-PERFIL/TARJETA-PERFIL/index.html" class="card-proyecto">
-                    <div class="card-icono">
-                        <i class="fas fa-id-card"></i>
-                    </div>
-                    <h3>Tarjeta de Perfil</h3>
-                    <p>Diseño responsivo con gradientes y efectos hover</p>
-                    <div class="card-tags">
-                        <span class="tag">Responsive</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Gradients</span>
-                    </div>
-                </a>
-
-                <!-- Navegación -->
-                <a href="./NAVEGACION/NAVEGACION/index.html" class="card-proyecto">
-                    <div class="card-icono">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <h3>Menú de Navegación</h3>
-                    <p>Navbar responsive con hamburguesa y efectos</p>
-                    <div class="card-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Responsive</span>
-                        <span class="tag">Sticky</span>
-                    </div>
-                </a>
-
-                <!-- Artículo/Blog -->
-                <a href="./ARTICULO/index.html" class="card-proyecto">
-                    <div class="card-icono">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h3>Blog / Artículo</h3>
-                    <p>Layout de blog con sidebar y tipografía moderna</p>
-                    <div class="card-tags">
-                        <span class="tag">CSS Grid</span>
-                        <span class="tag">Tipografía</span>
-                        <span class="tag">Semántica</span>
-                    </div>
-                </a>
-
-                <!-- Padding -->
-                <a href="./PADDINGS/index.html" class="card-proyecto">
-                    <div class="card-icono">
-                        <i class="fas fa-arrows-alt"></i>
-                    </div>
-                    <h3>Padding y Box Model</h3>
-                    <p>Ejercicios interactivos sobre espaciado interno</p>
-                    <div class="card-tags">
-                        <span class="tag">Box Model</span>
-                        <span class="tag">Práctico</span>
-                        <span class="tag">Demo</span>
-                    </div>
-                </a>
-
-                <!-- Bordes -->
-                <a href="./BORDERS/index.html" class="card-proyecto">
-                    <div class="card-icono">
-                        <i class="fas fa-square"></i>
-                    </div>
-                    <h3>Bordes y Border-Radius</h3>
-                    <p>Exploración completa de estilos de bordes en CSS</p>
-                    <div class="card-tags">
-                        <span class="tag">CSS Borders</span>
-                        <span class="tag">Border-radius</span>
-                        <span class="tag">Shapes</span>
-                    </div>
-                </a>
-
-                
-            </div>
+            <footer class="main-footer">
+                <p>(c) 2025 Milton Sandoval Monasterio. Todos los derechos reservados.</p>
+            </footer>
         </main>
-
-        <!-- Footer -->
-        <footer class="footer-principal">
-            <div class="info-footer">
-                <p>© 2025 Milton Sandoval Monasterio | Diseño Web II</p>
-                <p>Todos los proyectos son responsivos y usan HTML5, CSS3 y JavaScript moderno</p>
-            </div>
-            <div class="redes-sociales">
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-codepen"></i></a>
-            </div>
-        </footer>
     </div>
+    <script src="script.js" defer></script>
 </body>
 </html>

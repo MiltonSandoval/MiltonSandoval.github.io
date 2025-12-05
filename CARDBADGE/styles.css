@@ -1,0 +1,284 @@
+/* --- PALETA DE COLORES: "RETRO CONSOLA" --- */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc; /* Azul Eléctrico */
+    --acento-secundario: #ff7ac6; /* Rosa */
+    --borde-pixel: #000;
+    --sombra-pixel-offset: 4px;
+    --error: #ff5555;
+    --info: #50fa7b; /* Verde */
+    --premium: #f1fa8c; /* Amarillo */
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --transition-speed: 0.1s;
+}
+
+/* --- ESTILOS BASE Y RESET --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important; /* Prohibido redondear esquinas */
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2.5rem;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h3 {
+    word-break: break-all;
+}
+
+h1 {
+    color: var(--acento-primario);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.subtitle {
+    color: var(--texto);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+/* --- GRID DE CARDS --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* ==============================
+   CARD CONTAINER
+   ============================== */
+.card {
+    position: relative; /* CRUCIAL para el badge */
+    background: var(--fondo);
+    border: 4px solid var(--borde-pixel);
+    box-shadow: var(--sombra-pixel-offset) var(--sombra-pixel-offset) 0 0 var(--borde-pixel);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+}
+
+/* ==============================
+   BADGE POSICIONADO
+   ============================== */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+    font-family: var(--font-headings);
+    color: var(--borde-pixel);
+    border: 2px solid var(--borde-pixel);
+    text-shadow: none;
+    white-space: nowrap;
+}
+
+/* Variantes de badges */
+.badge-new {
+    background-color: var(--info);
+}
+
+.badge-discount {
+    background-color: var(--error);
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+}
+
+.badge-hot {
+    background-color: var(--acento-secundario);
+    animation: badgePulse 1.5s infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.badge-limited {
+    background-color: var(--error);
+    font-size: 0.65rem;
+    animation: badgeShake 3s infinite;
+}
+
+@keyframes badgeShake {
+    0%, 10%, 20%, 30%, 40%, 50% { transform: rotate(0deg); }
+    5%, 15%, 25%, 35%, 45% { transform: rotate(4deg); }
+    10%, 20%, 30%, 40% { transform: rotate(-4deg); }
+}
+
+
+.badge-premium {
+    background-color: var(--premium);
+    border: 2px solid var(--borde-pixel);
+}
+
+.badge-bestseller {
+    background-color: var(--acento-primario);
+}
+
+/* ==============================
+   CARD IMAGE
+   ============================== */
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 4px solid var(--borde-pixel);
+    background-color: #000;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease;
+    image-rendering: pixelated; /* ¡Clave para el look! */
+}
+
+.card:hover .card-image img {
+    opacity: 0.85;
+}
+
+/* ==============================
+   CARD CONTENT
+   ============================== */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para que el footer se alinee abajo */
+}
+
+.card-content h3 {
+    color: var(--acento-secundario);
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.card-content p {
+    color: var(--texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    flex-grow: 1;
+}
+
+/* ==============================
+   CARD FOOTER
+   ============================== */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 4px solid var(--borde-pixel);
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.price {
+    font-size: 1.5rem;
+    font-family: var(--font-headings);
+    color: var(--acento-primario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.btn {
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+    background-color: var(--acento-primario);
+    color: var(--borde-pixel);
+    border: 4px solid var(--borde-pixel);
+    box-shadow: var(--sombra-pixel-offset) var(--sombra-pixel-offset) 0 0 var(--borde-pixel);
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+    text-shadow: none;
+}
+
+.btn:hover {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+    background-color: var(--acento-secundario);
+}
+
+.btn:active {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        font-size: 0.7rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .card-content h3 {
+        font-size: 0.8rem;
+    }
+    .badge {
+        font-size: 0.6rem;
+        padding: 0.4rem 0.6rem;
+    }
+    .badge-discount {
+        font-size: 0.8rem;
+    }
+}

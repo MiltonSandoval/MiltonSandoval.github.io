@@ -1,0 +1,143 @@
+/* --- PALETA DE COLORES: "RETRO CONSOLA" --- */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc;
+    --acento-secundario: #ff7ac6;
+    --borde-pixel: #000;
+    --sombra-pixel-offset: 4px;
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --transition-speed: 0.1s;
+    --spacing: 1rem;
+}
+
+/* --- ESTILOS BASE Y RESET --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 20px;
+    background-color: var(--borde-pixel);
+    color: var(--texto);
+    line-height: 1.6;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+/* ==============================
+   HOLY GRAIL LAYOUT CON GRID
+   ============================== */
+.holy-grail {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav main sidebar"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+/* Estilos comunes para las secciones */
+.header, .nav, .main, .sidebar, .footer, .widget {
+    border: 4px solid var(--borde-pixel);
+    background-color: var(--fondo);
+    padding: 1.5rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-headings);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+    color: var(--acento-secundario);
+    word-break: break-all;
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+}
+.header h1 { font-size: 2rem; color: var(--acento-primario); }
+.header p { font-size: 1.2rem; margin-top: 0.5rem; }
+
+.nav {
+    grid-area: nav;
+}
+.nav h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+.nav ul { list-style: none; }
+.nav li { margin-bottom: 0.5rem; }
+.nav a {
+    color: var(--texto);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+    transition: background-color var(--transition-speed);
+}
+.nav a:hover {
+    background-color: var(--borde-pixel);
+    color: var(--acento-primario);
+}
+
+.main {
+    grid-area: main;
+}
+.main h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--acento-primario); }
+.main p { margin-bottom: 1rem; font-size: 1.2rem; }
+
+.sidebar {
+    grid-area: sidebar;
+}
+.sidebar h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+.widget {
+    background: var(--fondo);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-color: var(--acento-primario);
+}
+.widget h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .holy-grail {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto; /* Let rows size automatically */
+    }
+    .header, .nav, .main, .sidebar, .footer {
+        padding: 1rem;
+    }
+    body {
+        font-size: 18px;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .main h2 {
+        font-size: 1.2rem;
+    }
+    .nav h3, .sidebar h3 {
+        font-size: 1rem;
+    }
+}

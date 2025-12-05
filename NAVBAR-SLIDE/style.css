@@ -1,0 +1,152 @@
+/* --- PALETA DE COLORES: "RETRO CONSOLA" --- */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc;
+    --acento-secundario: #ff7ac6;
+    --borde-pixel: #000;
+    --sombra-pixel-offset: 4px;
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --transition-speed: 0.3s;
+}
+
+/* --- ESTILOS BASE Y RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 22px;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+h1 {
+    font-family: var(--font-headings);
+    color: var(--acento-primario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+    font-size: 2rem;
+    word-break: break-all;
+}
+
+/* --- Estilos de la Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--borde-pixel);
+    padding: 1rem 2rem;
+    color: var(--texto);
+    position: relative;
+    border-bottom: 4px solid var(--acento-primario);
+}
+
+.logo {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    color: var(--acento-secundario);
+    cursor: pointer;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+/* Estilos de los enlaces (Desktop por defecto) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto);
+    font-size: 1rem;
+    font-family: var(--font-headings);
+    transition: color var(--transition-speed);
+}
+
+.nav-links a:hover {
+    color: var(--acento-secundario);
+}
+
+/* Estilos del botón Hamburguesa (Oculto en Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    border: 4px solid var(--borde-pixel);
+    padding: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 5px auto;
+    background-color: var(--texto);
+    transition: all 0.3s ease-in-out;
+}
+
+main {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+main p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* --- Media Queries (Mobile) --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    main p {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 76px; /* Ajustado a la altura del navbar + borde */
+        right: -100%;
+        height: calc(100vh - 76px);
+        width: 70%;
+        max-width: 300px;
+        background-color: var(--borde-pixel);
+        border-left: 4px solid var(--acento-primario);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        gap: 2rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}

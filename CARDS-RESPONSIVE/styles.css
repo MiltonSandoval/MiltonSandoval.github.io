@@ -1,0 +1,247 @@
+/* --- PALETA DE COLORES: "RETRO CONSOLA" --- */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc; /* Azul Eléctrico */
+    --acento-secundario: #ff7ac6; /* Rosa */
+    --borde-pixel: #000;
+    --sombra-pixel-offset: 4px;
+    --info: #50fa7b; /* Verde */
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --transition-speed: 0.1s;
+}
+
+/* --- ESTILOS BASE Y RESET --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2.5rem;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ==============================
+   PAGE HEADER
+   ============================== */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1, .card-content h3 {
+    word-break: break-all;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--acento-primario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+}
+
+/* ==============================
+   FILTER BUTTONS
+   ============================== */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border: 4px solid var(--borde-pixel);
+    background: transparent;
+    color: var(--texto);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    text-shadow: none;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--acento-secundario);
+    color: var(--borde-pixel);
+}
+
+/* ==============================
+   CARDS GRID RESPONSIVE
+   ============================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* ==============================
+   CARD DESIGN
+   ============================== */
+.card {
+    background: var(--fondo);
+    border: 4px solid var(--borde-pixel);
+    box-shadow: var(--sombra-pixel-offset) var(--sombra-pixel-offset) 0 0 var(--borde-pixel);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+}
+
+/* ==============================
+   CARD IMAGE
+   ============================== */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    image-rendering: pixelated;
+    border-bottom: 4px solid var(--borde-pixel);
+    background-color: #000;
+    transition: opacity 0.2s ease;
+}
+
+.card:hover img {
+    opacity: 0.85;
+}
+
+/* ==============================
+   CARD CONTENT
+   ============================== */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--acento-primario);
+    color: var(--borde-pixel);
+    font-family: var(--font-headings);
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-shadow: none;
+    align-self: flex-start; /* Para que no ocupe todo el ancho */
+    border: 2px solid var(--borde-pixel);
+}
+
+.card-content h3 {
+    color: var(--acento-secundario);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--font-headings);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.card-content p {
+    color: var(--texto);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    flex-grow: 1;
+}
+
+.btn {
+    width: 100%;
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    background: var(--acento-secundario);
+    color: var(--borde-pixel);
+    border: 4px solid var(--borde-pixel);
+    box-shadow: var(--sombra-pixel-offset) var(--sombra-pixel-offset) 0 0 var(--borde-pixel);
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+    text-shadow: none;
+    margin-top: auto;
+}
+
+.btn:hover {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+    background-color: var(--acento-primario);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .cards-grid {
+        gap: 2rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.7rem;
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+   .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-btn {
+        width: 100%;
+    }
+
+    .card-content h3 {
+        font-size: 0.8rem;
+    }
+}

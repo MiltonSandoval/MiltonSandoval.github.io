@@ -1,0 +1,270 @@
+/* --- PALETA DE COLORES: "RETRO CONSOLA" --- */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc;
+    --acento-secundario: #ff7ac6;
+    --borde-pixel: #000;
+    --sombra-pixel-offset: 4px;
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --transition-speed: 0.1s;
+    --spacing: 1.5rem;
+}
+
+/* --- ESTILOS BASE Y RESET --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    font-size: 20px;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem;
+}
+
+h1, h2, h3, h4 {
+    word-break: break-all;
+}
+
+
+code {
+    background: var(--borde-pixel);
+    padding: 2px 6px;
+    font-size: 0.9em;
+    color: var(--acento-secundario);
+    border: 2px solid var(--acento-primario);
+}
+
+/* =====================================
+   HEADER
+   ===================================== */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    color: var(--acento-primario);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--texto);
+}
+
+/* =====================================
+   GALLERY - CSS GRID
+   ===================================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing);
+    margin-bottom: 4rem;
+}
+
+/* =====================================
+   GALLERY ITEMS
+   ===================================== */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 4px solid var(--borde-pixel);
+    box-shadow: var(--sombra-pixel-offset) var(--sombra-pixel-offset) 0 0 var(--borde-pixel);
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+    aspect-ratio: 1 / 1;
+    background-color: #000;
+}
+
+.gallery-item:hover {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+    image-rendering: pixelated;
+}
+
+.gallery-item:hover img {
+    opacity: 0.5;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.2s ease;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-family: var(--font-headings);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--acento-secundario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.overlay p {
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+/* =====================================
+   FEATURED ITEMS - GRID POSITIONING
+   ===================================== */
+.gallery-item.featured {
+    grid-column: span 2;
+    grid-row: span 2; /* Para que sea un cuadrado grande */
+    aspect-ratio: auto;
+}
+
+/* =====================================
+   EXPLANATION SECTION
+   ===================================== */
+.explanation {
+    background: var(--borde-pixel);
+    padding: 2rem;
+    border: 4px solid var(--acento-primario);
+}
+
+.explanation h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-headings);
+    color: var(--acento-secundario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.code-example {
+    background: #1a1a1a;
+    color: var(--texto);
+    padding: 1.5rem;
+    border: 4px solid var(--borde-pixel);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.code-example h3 {
+    color: var(--acento-secundario);
+    margin-bottom: 1rem;
+    font-family: var(--font-headings);
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.code-example pre {
+    margin: 0;
+}
+
+.code-example code {
+    background: transparent;
+    color: var(--info);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0;
+    border: none;
+}
+
+/* =====================================
+   FEATURES GRID
+   ===================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature {
+    padding: 1.5rem;
+    background: var(--fondo);
+    border: 4px solid var(--borde-pixel);
+}
+
+.feature h4 {
+    font-family: var(--font-headings);
+    color: var(--acento-primario);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.feature p {
+    color: var(--texto);
+    font-size: 1.1rem;
+}
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    .explanation h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-item.featured {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .explanation {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    .gallery {
+        gap: 1rem;
+    }
+    .overlay h3 {
+        font-size: 0.8rem;
+    }
+    .code-example code {
+        font-size: 1rem;
+    }
+}

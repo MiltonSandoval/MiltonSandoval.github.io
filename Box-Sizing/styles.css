@@ -1,0 +1,227 @@
+/* =====================================
+   PIXEL DASHBOARD THEME - BOX-SIZING (FIXED)
+   ===================================== */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc;
+    --acento-secundario: #ff7ac6;
+    --error: #ff5555;
+    --success: #50fa7b;
+    --borde-pixel: #000;
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+}
+
+/* --- ESTILOS BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 1.6;
+    padding: 20px;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-headings);
+    color: var(--acento-primario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+    border-radius: 0;
+}
+
+h1 { text-align: center; font-size: 1.5rem; margin-bottom: 1rem; }
+.intro { text-align: center; margin-bottom: 3rem; }
+h2 { font-size: 1.1rem; }
+h3 { font-size: 1rem; }
+
+code {
+    font-family: var(--font-body);
+    background: var(--borde-pixel);
+    color: var(--acento-secundario);
+    padding: 2px 6px;
+}
+
+/* --- CONTENEDORES DE SECCIÓN --- */
+.box-wrapper,
+.explanation,
+.best-practice,
+.interactive-demo {
+    background: var(--fondo);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 4px solid var(--borde-pixel);
+    border-radius: 0;
+}
+
+.box-wrapper h2,
+.explanation h2,
+.best-practice h2,
+.interactive-demo h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid var(--borde-pixel);
+}
+
+/* --- COMPARACIÓN DE CAJAS --- */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Aplicando los colores de error y éxito del screenshot */
+.box-wrapper:nth-child(1) h2 { color: var(--error); }
+.box-wrapper:nth-child(2) h2 { color: var(--success); }
+
+/* --- CAJAS DE DEMO ESTÁTICAS --- */
+.box {
+    width: 200px;
+    padding: 20px;
+    border-width: 10px;
+    border-style: solid;
+    margin: 0 auto 25px;
+    min-height: 140px;
+    text-align: left;
+    border-radius: 0;
+}
+
+.box p { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.box strong { font-family: var(--font-body); font-weight: normal; }
+.box .result { font-family: var(--font-headings); font-size: 0.9rem; margin-top: 1rem; }
+
+.content-box {
+    box-sizing: content-box;
+    border-color: var(--acento-primario);
+    background-color: rgba(58, 159, 252, 0.1);
+}
+.content-box .result strong { color: var(--error); }
+
+.border-box {
+    box-sizing: border-box;
+    border-color: var(--acento-primario);
+    background-color: rgba(58, 159, 252, 0.1);
+}
+.border-box .result strong { color: var(--success); }
+
+.calculation {
+    border: 4px solid var(--borde-pixel);
+    padding: 1rem;
+    border-radius: 0;
+}
+.calculation p { font-family: var(--font-headings); font-size: 0.8rem; margin-bottom: 1rem; }
+.calculation code { display: block; line-height: 1.8; }
+.calculation strong { color: var(--acento-secundario); font-size: 1.2em; }
+
+
+/* --- EXPLICACIÓN Y BENEFICIOS --- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.benefit {
+    padding: 1rem;
+    border: 4px solid var(--borde-pixel);
+    border-radius: 0;
+}
+.benefit h3 { font-family: var(--font-headings); font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--success); }
+.benefit p { font-size: 1rem; }
+
+/* --- BEST PRACTICE --- */
+.best-practice pre {
+    background: var(--borde-pixel);
+    color: var(--texto);
+    padding: 1.5rem;
+    margin: 20px 0;
+    border-radius: 0;
+}
+.best-practice pre code { color: var(--acento-secundario); background: none; }
+.tip { border: 4px solid var(--borde-pixel); padding: 1rem; border-radius: 0; }
+
+/* --- DEMO INTERACTIVA --- */
+.controls { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+.controls label { font-family: var(--font-headings); font-size: 0.9rem; display: flex; align-items: center; gap: 15px; }
+.controls span { min-width: 70px; color: var(--acento-primario); }
+
+.pixel-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 24px;
+    background: var(--borde-pixel);
+    outline: none;
+    border: 4px solid var(--borde-pixel);
+    border-radius: 0;
+}
+.pixel-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--acento-primario);
+    cursor: pointer;
+    border: 4px solid var(--borde-pixel);
+    border-radius: 0;
+}
+.pixel-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--acento-primario);
+    cursor: pointer;
+    border: 4px solid var(--borde-pixel);
+    border-radius: 0;
+}
+
+
+.demo-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.demo-box {
+    /* JS controla width, padding, borderWidth */
+    box-sizing: content-box;
+    border-style: solid;
+    border-color: var(--error);
+    background-color: rgba(255, 85, 85, 0.1);
+    margin: 0 auto;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0;
+}
+.demo-border-box {
+    box-sizing: border-box;
+    border-color: var(--success);
+    background-color: rgba(80, 250, 123, 0.1);
+}
+.demo-box p { font-family: var(--font-headings); font-size: 0.8rem; }
+.demo-box p:last-child { color: var(--acento-secundario); margin-top: 0.5rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    body { padding: 10px; font-size: 20px; }
+    h1 { font-size: 1.2rem; }
+    .comparison-grid, .demo-boxes, .benefits-grid { grid-template-columns: 1fr; }
+    .box-wrapper, .explanation, .best-practice, .interactive-demo { padding: 1.5rem; }
+    .controls label { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

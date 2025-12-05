@@ -1,0 +1,458 @@
+/* --- PALETA DE COLORES: "RETRO CONSOLA" --- */
+:root {
+    --fondo: #202334;
+    --texto: #eff5e4;
+    --acento-primario: #3a9ffc;
+    --acento-secundario: #ff7ac6;
+    --borde-pixel: #000;
+    --sombra-pixel-offset: 4px;
+    --error: #ff5555;
+    --info: #50fa7b;
+
+    --font-headings: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --transition-speed: 0.1s;
+    --nav-height: 70px;
+}
+
+/* --- ESTILOS BASE Y RESET --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 20px;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+h1, h2, h3 {
+    word-break: break-all;
+}
+
+/* ==============================
+   NAVBAR CON FLEXBOX
+   ============================== */
+.navbar {
+    background: var(--borde-pixel);
+    border-bottom: 4px solid var(--acento-primario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--nav-height);
+}
+
+/* ==============================
+   LOGO
+   ============================== */
+.navbar-logo a {
+    color: var(--acento-secundario);
+    font-size: 1.2rem;
+    font-family: var(--font-headings);
+    font-weight: normal;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: color var(--transition-speed);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.navbar-logo a:hover {
+    color: var(--acento-primario);
+}
+
+.navbar-logo svg {
+    color: var(--acento-secundario);
+    stroke-width: 2;
+    width: 32px;
+    height: 32px;
+}
+
+/* ==============================
+   MENÚ DE NAVEGACIÓN
+   ============================== */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 auto 0 2rem; /* Ajuste para dar espacio */
+}
+
+.navbar-menu li a {
+    color: var(--texto);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+    border: 4px solid transparent;
+    transition: all var(--transition-speed);
+}
+
+.navbar-menu li a:hover {
+    background: var(--fondo);
+    color: var(--acento-primario);
+}
+
+.navbar-menu li a.active {
+    background: var(--fondo);
+    color: var(--acento-secundario);
+    border-color: var(--acento-secundario);
+}
+
+/* ==============================
+   BOTONES DE ACCIÓN
+   ============================== */
+.navbar-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn {
+    padding: 0.7rem 1.5rem;
+    border: 4px solid var(--borde-pixel);
+    cursor: pointer;
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+    text-shadow: none;
+    box-shadow: var(--sombra-pixel-offset) var(--sombra-pixel-offset) 0 0 var(--borde-pixel);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.btn:hover {
+    transform: translate(var(--sombra-pixel-offset), var(--sombra-pixel-offset));
+    box-shadow: 0 0 0 0 var(--borde-pixel);
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--texto);
+    border-color: var(--texto);
+}
+
+.btn-login:hover {
+    background-color: var(--acento-secundario);
+    border-color: var(--borde-pixel);
+    color: var(--borde-pixel);
+}
+
+.btn-signup {
+    background: var(--acento-primario);
+    color: var(--borde-pixel);
+}
+
+/* ==============================
+   BOTÓN HAMBURGUESA
+   ============================== */
+.navbar-toggle {
+    display: none;
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: 4px solid var(--borde-pixel);
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 22px;
+    height: 4px;
+    background: var(--texto);
+    position: absolute;
+    left: 4px;
+    transition: all 0.2s ease;
+}
+.navbar-toggle span:nth-child(1) { top: 6px; }
+.navbar-toggle span:nth-child(2) { top: 13px; }
+.navbar-toggle span:nth-child(3) { top: 20px; }
+
+.navbar-toggle.active span:nth-child(1) { transform: rotate(45deg); top: 13px; }
+.navbar-toggle.active span:nth-child(2) { opacity: 0; }
+.navbar-toggle.active span:nth-child(3) { transform: rotate(-45deg); top: 13px; }
+
+
+/* ==============================
+   SECCIONES DE CONTENIDO
+   ============================== */
+.section {
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid var(--borde-pixel);
+}
+
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-family: var(--font-headings);
+    color: var(--acento-secundario);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.section-hero {
+    background-color: var(--borde-pixel);
+    text-align: center;
+}
+
+.section-hero h1 {
+    color: var(--acento-primario);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-headings);
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.section-hero p {
+    color: var(--texto);
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn-cta {
+    background: var(--acento-primario);
+    color: var(--borde-pixel);
+    padding: 1rem 2rem;
+}
+
+/* Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--fondo);
+    padding: 2rem;
+    border: 4px solid var(--borde-pixel);
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-family: var(--font-headings);
+    color: var(--acento-secundario);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+
+.service-card p {
+    color: var(--texto);
+    font-size: 1.1rem;
+}
+
+/* Portfolio */
+.section-dark {
+    background: var(--borde-pixel);
+}
+
+.section-dark h2 {
+    color: var(--acento-primario);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 4px solid var(--borde-pixel);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+    image-rendering: pixelated;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    color: white;
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.2s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    font-family: var(--font-headings);
+    color: var(--acento-secundario);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-shadow: 2px 2px 0 var(--borde-pixel);
+}
+.portfolio-overlay p {
+    font-size: 1.1rem;
+}
+
+/* Testimonios */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background: var(--fondo);
+    padding: 2rem;
+    border: 4px solid var(--borde-pixel);
+}
+
+.testimonial-text {
+    font-style: normal;
+    color: var(--texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.testimonial-author strong {
+    font-family: var(--font-headings);
+    color: var(--acento-primario);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.testimonial-author span {
+    color: var(--acento-secundario);
+    font-size: 0.9rem;
+    font-family: var(--font-headings);
+}
+
+/* Contacto */
+.section-contact {
+    background-color: var(--borde-pixel);
+    color: var(--texto);
+    text-align: center;
+}
+
+.section-contact h2 {
+    color: var(--acento-primario);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--borde-pixel);
+    color: var(--texto);
+    text-align: center;
+    padding: 2rem;
+    font-family: var(--font-headings);
+    font-size: 0.8rem;
+    border-top: 4px solid var(--acento-primario);
+}
+
+/* ==============================
+   RESPONSIVE - MOBILE
+   ============================== */
+@media (max-width: 992px) {
+    .navbar-menu, .navbar-actions {
+        display: none;
+    }
+    .navbar-toggle {
+        display: flex;
+    }
+    .navbar-menu.active {
+        display: flex;
+        position: absolute;
+        top: calc(var(--nav-height) + 4px);
+        left: 0;
+        width: 100%;
+        background-color: var(--borde-pixel);
+        flex-direction: column;
+        border-bottom: 4px solid var(--acento-primario);
+        padding: 1rem 0;
+    }
+    .navbar-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-menu li a {
+        padding: 1rem;
+        border-bottom: 2px solid var(--acento-primario);
+    }
+    .navbar-menu li:last-child a {
+        border-bottom: none;
+    }
+    .navbar-actions.active {
+        display: none; /* Simplificamos, sin acciones en menú móvil */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-hero h1 { font-size: 2rem; }
+    .section h2 { font-size: 1.8rem; }
+}

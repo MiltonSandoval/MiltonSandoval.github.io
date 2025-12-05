@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Componente de tarjeta con estética pixel art">
+    <title>Inventario de Items</title>
+    <!-- Pixel Art Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">INVENTORY.SYS</h1>
+        <p class="subtitle">// Cargando datos de items...</p>
+        
+        <!-- Grid de Cards -->
+        <div class="cards-grid">
+            
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Auriculares inalámbricos con estética pixelada">
+                    <span class="badge">NUEVO</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">AURICULARES_PRO_X.ITM</h2>
+                    <p class="card-price">
+                        <span class="price-current">199.99 G</span>
+                        <span class="price-old">249.99 G</span>
+                    </p>
+                    <p class="card-description">
+                        Auriculares inalámbricos con cancelación de ruido activa y hasta 30 horas de batería.
+                    </p>
+                    <div class="card-footer">
+                        <button class="btn-primary">AÑADIR_AL_CARRO</button>
+                        <button class="btn-secondary">DETALLES</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Reloj inteligente con estética pixelada">
+                    <span class="badge badge-sale">-20%</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">SMARTWATCH_ELITE.ITM</h2>
+                    <p class="card-price">
+                        <span class="price-current">159.99 G</span>
+                        <span class="price-old">199.99 G</span>
+                    </p>
+                    <p class="card-description">
+                        Reloj inteligente con monitoreo de salud, GPS integrado y resistencia al agua.
+                    </p>
+                    <div class="card-footer">
+                        <button class="btn-primary">AÑADIR_AL_CARRO</button>
+                        <button class="btn-secondary">DETALLES</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=300&fit=crop" alt="Cámara digital con estética pixelada">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">CAMARA_4K_PRO.ITM</h2>
+                    <p class="card-price">
+                        <span class="price-current">899.99 G</span>
+                    </p>
+                    <p class="card-description">
+                        Cámara profesional con sensor 24MP, grabación 4K y estabilización de imagen.
+                    </p>
+                    <div class="card-footer">
+                        <button class="btn-primary">AÑADIR_AL_CARRO</button>
+                        <button class="btn-secondary">DETALLES</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Explicación del Box Model -->
+        <div class="box-model-explanation">
+            <h2>BOX_MODEL_DIAGNOSTIC.LOG</h2>
+            <div class="explanation-grid">
+                <div class="explanation-item">
+                    <h3>[CONTENIDO]</h3>
+                    <p>Imagen, título, precio, desc, botones</p>
+                </div>
+                <div class="explanation-item">
+                    <h3>[PADDING]</h3>
+                    <p>20px en card-content para espaciado</p>
+                </div>
+                <div class="explanation-item">
+                    <h3>[BORDE]</h3>
+                    <p>4px sólido negro con sombra de pixel</p>
+                </div>
+                <div class="explanation-item">
+                    <h3>[MARGEN]</h3>
+                    <p>Grid gap de 2rem entre items</p>
+                </div>
+                <div class="explanation-item">
+                    <h3>[BOX-SIZING]</h3>
+                    <p>border-box para ancho predecible</p>
+                </div>
+                <div class="explanation-item">
+                    <h3>[SOMBRA]</h3>
+                    <p>4px de box-shadow sólido y negro</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

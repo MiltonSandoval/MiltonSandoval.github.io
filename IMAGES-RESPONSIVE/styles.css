@@ -1,0 +1,155 @@
+:root {
+    --fondo: #202334; /* Azul/morado oscuro */
+    --texto: #eff5e4; /* Blanco hueso */
+    --acento-primario: #3a9ffc; /* Azul eléctrico */
+    --acento-secundario: #ff7ac6; /* Rosa/Magenta */
+    --borde-pixel: #000; /* Negro puro */
+}
+
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--acento-primario);
+    margin-bottom: 0.8em;
+    word-break: break-all;
+    line-height: 1.2;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 5vw + 1rem, 3rem);
+    color: var(--acento-secundario);
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--fondo);
+    padding: 2rem;
+    border: 4px solid var(--borde-pixel);
+    box-shadow: 8px 8px 0 0 var(--borde-pixel);
+}
+
+section {
+    margin-bottom: 3rem;
+    border: 2px solid var(--borde-pixel);
+    box-shadow: 4px 4px 0 0 var(--borde-pixel);
+    padding: 1.5rem;
+    background-color: #2b2f4c; /* Ligeramente diferente para secciones */
+}
+
+h2 {
+    color: var(--acento-primario);
+    font-size: clamp(1.2rem, 3vw + 0.8rem, 2rem);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px var(--borde-pixel);
+}
+
+p {
+    margin-bottom: 1em;
+    max-width: 80ch;
+}
+
+/* Responsive Images */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1.5rem;
+    border: 2px solid var(--acento-secundario);
+    box-shadow: 4px 4px 0 0 var(--borde-pixel);
+    image-rendering: pixelated; /* ¡Importante para el efecto pixel! */
+}
+
+picture img {
+    image-rendering: pixelated; /* Asegura también las imágenes del elemento picture */
+}
+
+/* Background Image Responsive (CSS) */
+.hero-background {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto);
+    text-shadow: 2px 2px var(--borde-pixel);
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--borde-pixel);
+    box-shadow: 6px 6px 0 0 var(--borde-pixel);
+    transition: background-image 0.3s ease-in-out;
+    margin-top: 1.5rem;
+    
+    /* Mobile First (Imagen pequeña por defecto) */
+    background-image: url('https://placehold.co/400x400/202334/eff5e4?text=BG_MOVIL');
+    image-rendering: pixelated; /* Aunque es un background, algunos navegadores lo respetan */
+}
+
+.hero-background h3 {
+    font-size: 1.5rem;
+    color: var(--acento-secundario);
+}
+
+/* Tablet (Media Query) */
+@media (min-width: 600px) {
+    .hero-background {
+        background-image: url('https://placehold.co/800x400/202334/eff5e4?text=BG_TABLET');
+    }
+}
+
+/* Desktop (Media Query) */
+@media (min-width: 1024px) {
+    .hero-background {
+        background-image: url('https://placehold.co/1200x400/202334/eff5e4?text=BG_ESCRITORIO');
+    }
+}
+
+hr {
+    border: none;
+    height: 4px;
+    background-color: var(--borde-pixel);
+    margin: 3rem 0;
+    box-shadow: 2px 2px 0 0 var(--acento-primario);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 4px solid var(--borde-pixel);
+    background-color: #2b2f4c;
+    box-shadow: 0 -4px 0 0 var(--borde-pixel);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--acento-secundario);
+}

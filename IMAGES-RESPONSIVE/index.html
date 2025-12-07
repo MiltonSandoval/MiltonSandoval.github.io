@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGES.SYS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>SISTEMA: IMÁGENES.SYS</h1>
+        <p>UTILIZA LA CONSOLA DE DESARROLLADOR PARA VER LOS CAMBIOS DE IMAGEN.</p>
+    </header>
+
+    <main class="container">
+
+        <section>
+            <h2>01. SRCSET (MULTI-RESOLUCIÓN)</h2>
+            <p>EL NAVEGADOR CARGARÁ LA VERSIÓN OPTIMIZADA.</p>
+            
+            <img 
+                src="https://placehold.co/400x300/202334/eff5e4?text=IMAGEN_DEFAULT" 
+                srcset="
+                    https://placehold.co/400x300/202334/eff5e4?text=IMAGEN_PEQUEÑA+400w 400w,
+                    https://placehold.co/800x600/202334/eff5e4?text=IMAGEN_MEDIANA+800w 800w,
+                    https://placehold.co/1200x900/202334/eff5e4?text=IMAGEN_GRANDE+1200w 1200w
+                "
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Ejemplo de srcset"
+                loading="lazy"
+                class="responsive-img"
+            >
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>02. PICTURE (DIRECCIÓN DE ARTE)</h2>
+            <p>SELECCIÓN DE IMAGEN SEGÚN EL ANCHO DE PANTALLA.</p>
+            
+            <picture>
+                <source 
+                    media="(min-width: 1024px)" 
+                    srcset="https://placehold.co/1200x400/202334/eff5e4?text=DESKTOP_WIDE"
+                >
+                <source 
+                    media="(min-width: 768px)" 
+                    srcset="https://placehold.co/800x500/202334/eff5e4?text=TABLET_VIEW"
+                >
+                <img 
+                    src="https://placehold.co/400x400/202334/eff5e4?text=MOBILE_SQUARE" 
+                    alt="Ejemplo de art direction"
+                    loading="lazy"
+                    class="responsive-img"
+                >
+            </picture>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>03. BACKGROUND (CSS)</h2>
+            <p>IMAGEN DE FONDO DINÁMICA CON CSS.</p>
+            <div class="hero-background">
+                <h3>CONTENIDO SUPERPUESTO</h3>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>FIN DEL PROCESO</p>
+    </footer>
+
+</body>
+</html>
